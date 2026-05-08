@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --saffron: #E07B39;
+  --deep-green: #2D6A4F;
+  --gold: #C9920C;
+  --cream: #FFFBF5;
+  --warm-brown: #6B3A1F;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cream);
+  font-family: "Roboto", "Noto Sans Devanagari", Arial, sans-serif;
+}
+
+/* Devanagari text rendering */
+.devanagari, [lang="hi"] {
+  font-family: "Noto Sans Devanagari", "Roboto", Arial, sans-serif;
+}
+
+/* Hero gradient */
+.hero-gradient {
+  background: linear-gradient(
+    135deg,
+    rgba(224, 123, 57, 0.92) 0%,
+    rgba(45, 106, 79, 0.88) 100%
+  );
+}
+
+/* Saffron text */
+.text-saffron { color: var(--saffron); }
+.bg-saffron { background-color: var(--saffron); }
+.text-gold { color: var(--gold); }
+
+/* Section divider */
+.section-divider {
+  border: none;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--saffron), transparent);
+  margin: 0 auto;
+  width: 80px;
+}
+
+/* Membership card highlight */
+.membership-featured {
+  border: 2px solid var(--saffron);
+  position: relative;
+  overflow: hidden;
+}
+
+.membership-featured::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--saffron), var(--gold));
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--saffron); border-radius: 4px; }
+
+/* Print styles for ID card */
+@media print {
+  .no-print { display: none !important; }
+  .print-only { display: block !important; }
+}
